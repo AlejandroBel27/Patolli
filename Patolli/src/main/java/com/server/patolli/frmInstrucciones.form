@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="lblInstrucciones" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="btnVolver" min="-2" pref="200" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="364" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="sclpInstrucciones" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+              <Component id="lblInstrucciones" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="sclpInstrucciones" pref="388" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="btnVolver" min="-2" pref="50" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lblInstrucciones">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="36" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Instrucciones"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="sclpInstrucciones">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="txtaInstrucciones">
+          <Properties>
+            <Property name="editable" type="boolean" value="false"/>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="lineWrap" type="boolean" value="true"/>
+            <Property name="rows" type="int" value="5"/>
+            <Property name="text" type="java.lang.String" value="Instrucciones de Patolli&#xa;&#xa;Objetivo del Juego&#xa;El objetivo del Patolli es llevar todas tus fichas a la meta antes que tus oponentes, avanzando a lo largo del tablero en forma de cruz y apostando puntos en cada turno. Ganas el juego si eres el primer jugador en lograr que todas tus fichas lleguen a la meta o si tienes m&#xe1;s fichas en meta cuando otros jugadores se queden sin fichas o puntos.&#xa;&#xa;El Tablero&#xa;El tablero tiene forma de cruz (o &quot;X&quot;) y se divide en 52 casillas que representan el ciclo de 52 a&#xf1;os del calendario azteca. Las casillas est&#xe1;n organizadas en cuatro brazos y tienen zonas especiales:&#xa;- Casillas con Tri&#xe1;ngulo: Al caer aqu&#xed;, debes pagar el doble de la apuesta.&#xa;- Casillas Centrales: Si caes en una casilla central ocupada por otra ficha, esta ser&#xe1; eliminada del tablero.&#xa;- Casillas Semicirculares: Al caer aqu&#xed;, juegas dos turnos seguidos.&#xa;- Casillas de Meta y Salida: Cada jugador empieza en una casilla de salida y debe avanzar en sentido de las agujas del reloj para volver a su punto de inicio, que ser&#xe1; su meta.&#xa;&#xa;Jugadores y Fichas&#xa;- De 2 a 4 jugadores pueden participar, cada uno con fichas de un color diferente.&#xa;- Cada jugador cuenta con entre 2 y 6 fichas (configurable al inicio del juego). Todas las fichas deben recorrer el tablero en sentido de las agujas del reloj para llegar a la meta.&#xa;&#xa;Dados (Ca&#xf1;as)&#xa;En lugar de dados, se usan 5 ca&#xf1;as, de las cuales un lado tiene un punto y el otro est&#xe1; liso. El resultado de cada tirada determina cu&#xe1;ntas casillas puedes avanzar:&#xa;- 1 ca&#xf1;a con punto: avanzas 1 casilla.&#xa;- 2 ca&#xf1;as con punto: avanzas 2 casillas.&#xa;- 3 ca&#xf1;as con punto: avanzas 3 casillas.&#xa;- 4 ca&#xf1;as con punto: avanzas 4 casillas.&#xa;- 5 ca&#xf1;as con punto: avanzas 10 casillas.&#xa;- Todas las ca&#xf1;as lisas: no avanzas y pierdes el turno.&#xa;&#xa;Apuestas&#xa;Cada jugador comienza con un fondo inicial de puntos (configurable). En cada turno, podr&#xe1;s hacer apuestas en base al &quot;monto m&#xed;nimo de apuesta&quot; configurado al inicio:&#xa;- Al iniciar una ficha en el tablero: Para ingresar una ficha debes obtener al menos un punto en tu tirada. Si no lo logras, debes pagar una apuesta a los dem&#xe1;s jugadores.&#xa;- Si caes en una casilla triangular: Pagas el doble de la apuesta.&#xa;- Si todas las ca&#xf1;as caen lisas (pierdes turno): Tambi&#xe9;n pagas una apuesta.&#xa;- Si una de tus fichas llega a la meta: Los dem&#xe1;s jugadores deben pagarte una apuesta.&#xa;&#xa;Movimientos Especiales&#xa;- Entrar al tablero: Cada jugador coloca su ficha en el centro del brazo opuesto a su punto de salida. Una vez dentro, debe seguir el trayecto completo hasta su meta.&#xa;- Casillas Ocupadas: Si caes en una casilla ocupada por otra ficha:&#xa;  - Si es una casilla central, la ficha que estaba en la casilla es eliminada.&#xa;  - Si no es una casilla central, tu ficha regresa a la casilla de origen.&#xa;- Elecci&#xf3;n de Ficha: Si tienes varias fichas en el tablero, elige cu&#xe1;l avanzar en tu turno. Puedes pagar una apuesta adicional para elegir una ficha espec&#xed;fica en vez de seguir el orden de entrada.&#xa;&#xa;Fin del Juego&#xa;El juego termina cuando un jugador logra llevar todas sus fichas a la meta o cuando otros jugadores no tienen puntos o fichas disponibles. El jugador con m&#xe1;s fichas en la meta ser&#xe1; el ganador si nadie logra meter todas sus fichas.&#xa;&#xa;Consejos Finales&#xa;- Administra tus apuestas con cuidado: &#xa1;Perder puntos r&#xe1;pidamente puede dejarte fuera del juego!&#xa;- Aprovecha las casillas semicirculares para ganar turnos extra.&#xa;- Planifica tus movimientos para evitar casillas ocupadas y mant&#xe9;n tus puntos para sobrevivir hasta el final.&#xa;&#xa;&#xa1;Buena suerte y disfruta del juego de Patolli!"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="btnVolver">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Segoe UI" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Volver"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVolverActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
+</Form>
