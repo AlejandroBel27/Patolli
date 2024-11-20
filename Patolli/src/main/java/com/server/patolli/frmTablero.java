@@ -143,6 +143,7 @@ public class frmTablero extends javax.swing.JFrame {
             int x = centro - tamCasilla;
             int y = x - (i * tamCasilla);
             listaCasillas.add(casilla(x, y, tamCasilla, listaCasillas.size() + ""));
+            if (i == fornum - 2) listaCasillas.get(listaCasillas.size() - 1).setBackground(Color.blue);
             pnlTablero.add(listaCasillas.get(listaCasillas.size() - 1));
         }
         
@@ -150,6 +151,7 @@ public class frmTablero extends javax.swing.JFrame {
             int x = centro;
             int y = (centro - fornum * tamCasilla) + i * tamCasilla;
             listaCasillas.add(casilla(x, y, tamCasilla, listaCasillas.size() + ""));
+            if (i == 1) listaCasillas.get(listaCasillas.size() - 1).setBackground(Color.blue);
             if (i == fornum - 2) listaCasillas.get(listaCasillas.size() - 1).setBackground(Color.yellow);
             pnlTablero.add(listaCasillas.get(listaCasillas.size() - 1));
         }
@@ -158,6 +160,7 @@ public class frmTablero extends javax.swing.JFrame {
             int x = centro + tamCasilla + i * tamCasilla;
             int y = centro - tamCasilla;
             listaCasillas.add(casilla(x, y, tamCasilla, listaCasillas.size() + ""));
+            if (i == fornum - 3) listaCasillas.get(listaCasillas.size() - 1).setBackground(Color.blue);
             pnlTablero.add(listaCasillas.get(listaCasillas.size() - 1));
         }
         
@@ -165,6 +168,7 @@ public class frmTablero extends javax.swing.JFrame {
             int x = (centro - tamCasilla + fornum * tamCasilla) - i * tamCasilla;
             int y = centro;
             listaCasillas.add(casilla(x, y, tamCasilla, listaCasillas.size() + ""));
+            if (i == 1) listaCasillas.get(listaCasillas.size() - 1).setBackground(Color.blue);
             if (i == fornum - 2) listaCasillas.get(listaCasillas.size() - 1).setBackground(Color.yellow);
             pnlTablero.add(listaCasillas.get(listaCasillas.size() - 1));
         }
@@ -173,6 +177,7 @@ public class frmTablero extends javax.swing.JFrame {
             int x = centro;
             int y = (centro + tamCasilla) + i * tamCasilla;
             listaCasillas.add(casilla(x, y, tamCasilla, listaCasillas.size() + ""));
+            if (i == fornum - 3) listaCasillas.get(listaCasillas.size() - 1).setBackground(Color.blue);
             pnlTablero.add(listaCasillas.get(listaCasillas.size() - 1));
         }
         
@@ -180,6 +185,7 @@ public class frmTablero extends javax.swing.JFrame {
             int x = centro - tamCasilla;
             int y = (centro - tamCasilla + fornum * tamCasilla) - i * tamCasilla;
             listaCasillas.add(casilla(x, y, tamCasilla, listaCasillas.size() + ""));
+            if (i == 1) listaCasillas.get(listaCasillas.size() - 1).setBackground(Color.blue);
             if (i == fornum - 2) listaCasillas.get(listaCasillas.size() - 1).setBackground(Color.yellow);
             pnlTablero.add(listaCasillas.get(listaCasillas.size() - 1));
         }
@@ -188,6 +194,7 @@ public class frmTablero extends javax.swing.JFrame {
             int x = (centro - tamCasilla * 2) - i * tamCasilla;
             int y = centro;
             listaCasillas.add(casilla(x, y, tamCasilla, listaCasillas.size() + ""));
+            if (i == fornum - 3) listaCasillas.get(listaCasillas.size() - 1).setBackground(Color.blue);
             pnlTablero.add(listaCasillas.get(listaCasillas.size() - 1));
         }
         
@@ -195,6 +202,7 @@ public class frmTablero extends javax.swing.JFrame {
             int x = (centro - fornum * tamCasilla) + i * tamCasilla;
             int y = centro - tamCasilla;
             listaCasillas.add(casilla(x, y, tamCasilla, listaCasillas.size() + ""));
+            if (i == 1) listaCasillas.get(listaCasillas.size() - 1).setBackground(Color.blue);
             if (i == fornum - 2) listaCasillas.get(listaCasillas.size() - 1).setBackground(Color.yellow);
             pnlTablero.add(listaCasillas.get(listaCasillas.size() - 1));
         }
@@ -205,6 +213,8 @@ public class frmTablero extends javax.swing.JFrame {
         l.setOpaque(true);
         l.setBackground(Color.white);
         l.setBounds(x, y, tam, tam);
+        l.setBorder(BorderFactory.createLineBorder(Color.black, 3));
+        l.setHorizontalAlignment(JLabel.CENTER);
         return l;
     }
 
