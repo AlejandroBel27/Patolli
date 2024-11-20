@@ -18,6 +18,7 @@ public class frmTablero extends javax.swing.JFrame {
     public frmTablero() {
         initComponents();
         setLocationRelativeTo(null);
+        dibujarCasillas(14);
     }
 
     /**
@@ -127,6 +128,85 @@ public class frmTablero extends javax.swing.JFrame {
         new frmPrincipal().setVisible(true);
         dispose();
     }//GEN-LAST:event_btnRetirarseActionPerformed
+
+    private void dibujarCasillas(int num) {
+        int totalCasillas = (num * 4) - 4;
+        listaCasillas = new ArrayList<>();
+        int arrayI = 0;
+        
+        int centro = pnlTablero.getWidth() / 2;
+        int tamCasilla = pnlTablero.getWidth() / num;
+        
+        int fornum = num / 2;
+        
+        for (int i = 0; i < fornum; i++) {
+            int x = centro - tamCasilla;
+            int y = x - (i * tamCasilla);
+            listaCasillas.add(casilla(x, y, tamCasilla, listaCasillas.size() + ""));
+            pnlTablero.add(listaCasillas.get(listaCasillas.size() - 1));
+        }
+        
+        for (int i = 0; i < fornum; i++) {
+            int x = centro;
+            int y = (centro - fornum * tamCasilla) + i * tamCasilla;
+            listaCasillas.add(casilla(x, y, tamCasilla, listaCasillas.size() + ""));
+            if (i == fornum - 2) listaCasillas.get(listaCasillas.size() - 1).setBackground(Color.yellow);
+            pnlTablero.add(listaCasillas.get(listaCasillas.size() - 1));
+        }
+        
+        for (int i = 0; i < fornum - 1; i++) {
+            int x = centro + tamCasilla + i * tamCasilla;
+            int y = centro - tamCasilla;
+            listaCasillas.add(casilla(x, y, tamCasilla, listaCasillas.size() + ""));
+            pnlTablero.add(listaCasillas.get(listaCasillas.size() - 1));
+        }
+        
+        for (int i = 0; i < fornum; i++) {
+            int x = (centro - tamCasilla + fornum * tamCasilla) - i * tamCasilla;
+            int y = centro;
+            listaCasillas.add(casilla(x, y, tamCasilla, listaCasillas.size() + ""));
+            if (i == fornum - 2) listaCasillas.get(listaCasillas.size() - 1).setBackground(Color.yellow);
+            pnlTablero.add(listaCasillas.get(listaCasillas.size() - 1));
+        }
+        
+        for (int i = 0; i < fornum - 1; i++) {
+            int x = centro;
+            int y = (centro + tamCasilla) + i * tamCasilla;
+            listaCasillas.add(casilla(x, y, tamCasilla, listaCasillas.size() + ""));
+            pnlTablero.add(listaCasillas.get(listaCasillas.size() - 1));
+        }
+        
+        for (int i = 0; i < fornum; i++) {
+            int x = centro - tamCasilla;
+            int y = (centro - tamCasilla + fornum * tamCasilla) - i * tamCasilla;
+            listaCasillas.add(casilla(x, y, tamCasilla, listaCasillas.size() + ""));
+            if (i == fornum - 2) listaCasillas.get(listaCasillas.size() - 1).setBackground(Color.yellow);
+            pnlTablero.add(listaCasillas.get(listaCasillas.size() - 1));
+        }
+        
+        for (int i = 0; i < fornum - 1; i++) {
+            int x = (centro - tamCasilla * 2) - i * tamCasilla;
+            int y = centro;
+            listaCasillas.add(casilla(x, y, tamCasilla, listaCasillas.size() + ""));
+            pnlTablero.add(listaCasillas.get(listaCasillas.size() - 1));
+        }
+        
+        for (int i = 0; i < fornum - 1; i++) {
+            int x = (centro - fornum * tamCasilla) + i * tamCasilla;
+            int y = centro - tamCasilla;
+            listaCasillas.add(casilla(x, y, tamCasilla, listaCasillas.size() + ""));
+            if (i == fornum - 2) listaCasillas.get(listaCasillas.size() - 1).setBackground(Color.yellow);
+            pnlTablero.add(listaCasillas.get(listaCasillas.size() - 1));
+        }
+    }
+
+    private JLabel casilla(int x, int y, int tam, String texto) {
+        JLabel l = new JLabel(texto);
+        l.setOpaque(true);
+        l.setBackground(Color.white);
+        l.setBounds(x, y, tam, tam);
+        return l;
+    }
 
     /**
      * @param args the command line arguments
