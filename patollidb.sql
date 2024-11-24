@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `patolli` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `patolli`;
 -- MySQL dump 10.13  Distrib 8.0.40, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: patolli
@@ -135,6 +137,14 @@ LOCK TABLES `tablero` WRITE;
 /*!40000 ALTER TABLE `tablero` DISABLE KEYS */;
 /*!40000 ALTER TABLE `tablero` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping events for database 'patolli'
+--
+
+--
+-- Dumping routines for database 'patolli'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -145,4 +155,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-23 22:55:13
+-- Dump completed on 2024-11-23 23:02:41
