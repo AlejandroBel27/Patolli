@@ -4,10 +4,30 @@
  */
 package interfacesDao;
 
+import exceptions.Exceptions;
+import entidades.Partida;
 /**
  *
- * @author gilbert
+ * @author Equipo 1
  */
 public interface IPartidaDao {
+    /**
+     * Metodo que crea la partida.
+     * @param partida
+     * @throws Exceptions Comentario de exception regresado.
+     */
+    public void crearPartida(Partida partida)throws Exceptions;
+    /**
+     * Metodo que actualiza la partida.
+     * @param partida
+     * @throws Exceptions Comentario de exception regresado.
+     */
+    public void actualizarPartida(Partida partida)throws Exceptions;
+    /**
+     * Metodo que elimina la partida.
+     * @param partida
+     * @throws Exceptions Comentario de exception regresado.
+     */
+    public void EliminarPartida(Partida partida)throws Exceptions;
     
 }

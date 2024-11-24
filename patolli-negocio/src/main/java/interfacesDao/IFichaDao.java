@@ -4,10 +4,33 @@
  */
 package interfacesDao;
 
+import entidades.Ficha;
+import exceptions.Exceptions;
+
 /**
  *
- * @author gilbert
+ * @author Equipo 1
  */
 public interface IFichaDao {
+    
+    /**
+     * Metodo que genera la ficha.
+     * @param ficha 
+     * @throws Exceptions Comentario de exception regresado.
+     */
+    public void crearFicha(Ficha ficha) throws Exceptions;
+    /**
+     * Metodo para actualizar ficha.
+     * @param ficha
+     * @throws Exceptions Comentario de exception regresado.
+     */
+    public void actualizarFicha(Ficha ficha) throws Exceptions;
+    /**
+     * Metodo para eliminar Ficha.
+     * @param ficha
+     * @throws Exceptions Comentario de exception regresado.
+     */
+    public void EliminarFicha(Ficha ficha)throws Exceptions;
+    
     
 }

@@ -4,10 +4,30 @@
  */
 package interfacesDao;
 
+import entidades.Casilla;
+import exceptions.Exceptions;
 /**
  *
- * @author gilbert
+ * @author Equipo 1
  */
 public interface ICasillaDao {
+    /**
+     * Metodo que registra una casilla.
+     * @param casilla 
+     * @throws Exceptions Comentario de exception regresado.
+     */
+    public void registrarCasilla(Casilla casilla) throws Exceptions;
+    /**
+     * Metodo que actualiza una casilla.
+     * @param casilla 
+     * @throws Exceptions Comentario de exception regresado.
+     */
+    public void actualizarCasilla(Casilla casilla) throws Exceptions;
     
+    /**
+     * Metodo que elimina una casilla.
+     * @param casilla 
+     * @throws Exceptions Comentario de exception regresado.
+     */
+    public void EliminarCasilla(Casilla casilla) throws Exceptions;
 }
