@@ -2,13 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.server.patolli;
+package FrmGUI;
 
 import java.util.Random;
 
 /**
  *
- * @author Choche
+ * @author equipo 1
  */
 public class frmTablero extends javax.swing.JFrame {
 

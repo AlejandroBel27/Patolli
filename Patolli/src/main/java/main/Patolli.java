@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
 
-package mx.itson.patolli;
+package main;
 
 /**
  *
- * @author cocob
+ * @author equipo 1
  */
 public class Patolli {
 
