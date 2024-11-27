@@ -4,7 +4,12 @@
  */
 package FrmGUI;
 
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+import javax.swing.BorderFactory;
+import javax.swing.JLabel;
 
 /**
  *
@@ -12,7 +17,7 @@ import java.util.Random;
  */
 public class frmTablero extends javax.swing.JFrame {
 
-    List<JLabel> listaCasillas;
+    ArrayList<JLabel> listaCasillas;
 
     /**
      * Creates new form frmTablero

@@ -53,8 +53,6 @@ FrmGUI/frmCrear$7.class
 FrmGUI/frmLobby$16.class
 FrmGUI/frmLobby$26.class
 FrmGUI/frmPrincipal$1.class
-socket/Cliente.class
-socket/Servidor$clienteManage.class
 FrmGUI/frmLobby$3.class
 FrmGUI/frmUnirse$1.class
 FrmGUI/frmLobby$10.class
@@ -64,6 +62,5 @@ FrmGUI/frmInstrucciones.class
 FrmGUI/frmPrincipal$2.class
 main/Patolli.class
 FrmGUI/frmUnirse$2.class
-socket/Servidor.class
 FrmGUI/frmCrear$6.class
 FrmGUI/frmUnirse.class
