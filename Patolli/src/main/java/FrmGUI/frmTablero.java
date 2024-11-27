@@ -12,6 +12,8 @@ import java.util.Random;
  */
 public class frmTablero extends javax.swing.JFrame {
 
+    List<JLabel> listaCasillas;
+
     /**
      * Creates new form frmTablero
      */
