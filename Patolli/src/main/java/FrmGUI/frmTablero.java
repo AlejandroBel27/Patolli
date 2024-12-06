@@ -17,15 +17,32 @@ import javax.swing.JLabel;
  */
 public class frmTablero extends javax.swing.JFrame {
 
+    private int fondoApuesta;
+    private int minimoApuesta;
+    private int numeroJugadores;
+    private int numeroFichas;
+    private int numeroCasillas;
+
     ArrayList<JLabel> listaCasillas;
+    private int avance;
 
     /**
      * Creates new form frmTablero
      */
-    public frmTablero() {
+    public frmTablero(int[] config) {
         initComponents();
         setLocationRelativeTo(null);
-        dibujarCasillas(14);
+        this.fondoApuesta = config[0];
+        this.minimoApuesta = config[1];
+        this.numeroJugadores = config[2];
+        this.numeroFichas = config[3];
+        this.numeroCasillas = config[4];
+        dibujarCasillas(config[4]);
+        avance = 0;
+    }
+
+    public int getNumeroJugadores() {
+        return numeroJugadores;
     }
 
     /**
@@ -42,6 +59,14 @@ public class frmTablero extends javax.swing.JFrame {
         btnTirar = new javax.swing.JButton();
         lblTirada = new javax.swing.JLabel();
         btnRetirarse = new javax.swing.JButton();
+        btnSaltarTurno = new javax.swing.JButton();
+        pnlFichas = new javax.swing.JPanel();
+        btnFicha1 = new javax.swing.JButton();
+        btnFicha2 = new javax.swing.JButton();
+        btnFicha3 = new javax.swing.JButton();
+        btnFicha4 = new javax.swing.JButton();
+        btnFicha5 = new javax.swing.JButton();
+        btnFicha6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,6 +100,99 @@ public class frmTablero extends javax.swing.JFrame {
             }
         });
 
+        btnSaltarTurno.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnSaltarTurno.setText("Saltar turno");
+        btnSaltarTurno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSaltarTurnoActionPerformed(evt);
+            }
+        });
+
+        btnFicha1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnFicha1.setText("1");
+        btnFicha1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFicha1ActionPerformed(evt);
+            }
+        });
+
+        btnFicha2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnFicha2.setText("2");
+        btnFicha2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFicha2ActionPerformed(evt);
+            }
+        });
+
+        btnFicha3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnFicha3.setText("3");
+        btnFicha3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFicha3ActionPerformed(evt);
+            }
+        });
+
+        btnFicha4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnFicha4.setText("4");
+        btnFicha4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFicha4ActionPerformed(evt);
+            }
+        });
+
+        btnFicha5.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnFicha5.setText("5");
+        btnFicha5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFicha5ActionPerformed(evt);
+            }
+        });
+
+        btnFicha6.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btnFicha6.setText("6");
+        btnFicha6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFicha6ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlFichasLayout = new javax.swing.GroupLayout(pnlFichas);
+        pnlFichas.setLayout(pnlFichasLayout);
+        pnlFichasLayout.setHorizontalGroup(
+            pnlFichasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlFichasLayout.createSequentialGroup()
+                .addComponent(btnFicha1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnFicha2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pnlFichasLayout.createSequentialGroup()
+                .addGroup(pnlFichasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlFichasLayout.createSequentialGroup()
+                        .addComponent(btnFicha3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(btnFicha4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pnlFichasLayout.createSequentialGroup()
+                        .addComponent(btnFicha5, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnFicha6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        pnlFichasLayout.setVerticalGroup(
+            pnlFichasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlFichasLayout.createSequentialGroup()
+                .addGroup(pnlFichasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnFicha1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnFicha2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(5, 5, 5)
+                .addGroup(pnlFichasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnFicha3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnFicha4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pnlFichasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnFicha5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnFicha6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout pnlControlesLayout = new javax.swing.GroupLayout(pnlControles);
         pnlControles.setLayout(pnlControlesLayout);
         pnlControlesLayout.setHorizontalGroup(
@@ -83,7 +201,11 @@ public class frmTablero extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(btnTirar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblTirada, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
+                .addComponent(btnSaltarTurno)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlFichas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblTirada, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRetirarse, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0))
@@ -94,7 +216,10 @@ public class frmTablero extends javax.swing.JFrame {
                 .addGroup(pnlControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblTirada, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnTirar, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnRetirarse, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnRetirarse, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlControlesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(btnSaltarTurno, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pnlFichas, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -104,9 +229,9 @@ public class frmTablero extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(pnlControles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(56, 56, 56)
                 .addComponent(pnlTablero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(56, 56, 56))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,10 +249,24 @@ public class frmTablero extends javax.swing.JFrame {
     private void btnTirarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTirarActionPerformed
         Random random = new Random();
         String tirada = "";
+
         for (int i = 0; i < 5; i++) {
-            if (i > 0) tirada += "-";
-            tirada += random.nextBoolean() ? "I" : "O";
+            if (i > 0) {
+                tirada += "-";
+            }
+
+            if (random.nextBoolean()) {
+                tirada += "I";
+                avance++;
+            } else {
+                tirada += "O";
+            }
         }
+
+        if (avance == 5) {
+            avance = 10;
+        }
+
         lblTirada.setText(tirada);
     }//GEN-LAST:event_btnTirarActionPerformed
 
@@ -135,6 +274,34 @@ public class frmTablero extends javax.swing.JFrame {
         new frmPrincipal().setVisible(true);
         dispose();
     }//GEN-LAST:event_btnRetirarseActionPerformed
+
+    private void btnSaltarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaltarTurnoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSaltarTurnoActionPerformed
+
+    private void btnFicha1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFicha1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFicha1ActionPerformed
+
+    private void btnFicha2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFicha2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFicha2ActionPerformed
+
+    private void btnFicha3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFicha3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFicha3ActionPerformed
+
+    private void btnFicha4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFicha4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFicha4ActionPerformed
+
+    private void btnFicha5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFicha5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFicha5ActionPerformed
+
+    private void btnFicha6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFicha6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFicha6ActionPerformed
 
     private void dibujarCasillas(int num) {
         int totalCasillas = (num * 4) - 4;
@@ -228,43 +395,51 @@ public class frmTablero extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new frmTablero().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(frmTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(frmTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(frmTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(frmTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new frmTablero().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnFicha1;
+    private javax.swing.JButton btnFicha2;
+    private javax.swing.JButton btnFicha3;
+    private javax.swing.JButton btnFicha4;
+    private javax.swing.JButton btnFicha5;
+    private javax.swing.JButton btnFicha6;
     private javax.swing.JButton btnRetirarse;
+    private javax.swing.JButton btnSaltarTurno;
     private javax.swing.JButton btnTirar;
     private javax.swing.JLabel lblTirada;
     private javax.swing.JPanel pnlControles;
+    private javax.swing.JPanel pnlFichas;
     private javax.swing.JPanel pnlTablero;
     // End of variables declaration//GEN-END:variables
 }

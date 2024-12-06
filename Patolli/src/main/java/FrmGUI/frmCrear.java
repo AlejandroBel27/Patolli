@@ -448,8 +448,20 @@ public class frmCrear extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVolverActionPerformed
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
-        new frmLobby().setVisible(true);
-        dispose();
+        int fondoApuesta = this.fondo_apuesta;
+        int minimoApuesta = this.minimo_apuesta;
+        int numeroJugadores = cbxNumJugadores.getSelectedIndex() + 1;
+        int numeroFichas = cbxNumFichas.getSelectedIndex() + 1;
+        int numeroCasillas = cbxCasillasAspa.getSelectedIndex() + 7;
+
+        if (numeroJugadores >= 2 && numeroFichas >= 2 && numeroCasillas >= 8) {
+            int[] array = new int[]{
+                fondoApuesta, minimoApuesta, numeroJugadores, numeroFichas, numeroCasillas
+            };
+            frmTablero tablero = new frmTablero(array);
+            new frmLobby(tablero).setVisible(true);
+            dispose();
+        }
     }//GEN-LAST:event_btnCrearActionPerformed
 
     /**

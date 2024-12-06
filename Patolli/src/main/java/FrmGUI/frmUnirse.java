@@ -129,7 +129,7 @@ public class frmUnirse extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUnirseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUnirseActionPerformed
-        new frmLobby().setVisible(true);
+        new frmLobby(null).setVisible(true);
         dispose();
     }//GEN-LAST:event_btnUnirseActionPerformed
 
