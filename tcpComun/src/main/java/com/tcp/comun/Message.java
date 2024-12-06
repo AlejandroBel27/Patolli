@@ -8,7 +8,7 @@ import entidades.Jugador;
 import java.io.Serializable;
 /**
  *
- * @author gilbert
+ * @author  Equipo 1
  */
 public class Message implements Serializable {
       private MessageType messageType; 

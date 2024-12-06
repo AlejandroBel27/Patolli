@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  *
- * @author gilbert
+ * @author  Equipo 1
  */
 public class MessageBody {
     private String razonDesconexion;

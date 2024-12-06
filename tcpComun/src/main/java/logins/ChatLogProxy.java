@@ -4,17 +4,17 @@ import java.io.Serializable;
 import javax.swing.JOptionPane;
 
 /*
- * @author gilbert
+ * @author  Equipo 1
  */
 public class ChatLogProxy implements IchatLogger, Serializable {
 
     private static IchatLogger instance;
     private IchatLogger logger;
-    private Class clazz;
+    private Class clase;
 
-    private ChatLogProxy(Class clazz) {
-        this.clazz = clazz;
-        this.logger = chatLoggerImpl.getInstance(clazz);
+    private ChatLogProxy(Class clase) {
+        this.clase = clase;
+        this.logger = chatLoggerImpl.getInstance(clase);
     }
 
     public static IchatLogger getInstance(Class clazz) {

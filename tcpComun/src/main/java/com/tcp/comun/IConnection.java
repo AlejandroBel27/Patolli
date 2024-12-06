@@ -6,7 +6,7 @@ package com.tcp.comun;
 
 /**
  *
- * @author gilbert
+ * @author  Equipo 1
  */
 public interface IConnection {
     void sendMessage(Message mensaje);

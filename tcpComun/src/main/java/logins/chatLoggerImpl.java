@@ -10,7 +10,7 @@ import java.util.logging.Level;
 
 /**
  *
- * @author gilbert
+ * @author  Equipo 1
  */
 public class chatLoggerImpl implements IchatLogger, Serializable {
 

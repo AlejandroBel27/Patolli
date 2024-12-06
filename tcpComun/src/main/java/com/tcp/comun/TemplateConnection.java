@@ -8,7 +8,7 @@ import com.tcp.comun.Message;
 
 /**
  *
- * @author gilbert
+ * @author  Equipo 1
  */
 public interface TemplateConnection {
 

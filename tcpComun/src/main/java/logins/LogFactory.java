@@ -6,7 +6,7 @@ package logins;
 
 /**
  *
- * @author gilbert
+ * @author  Equipo 1
  */
 public class LogFactory {
     public static IchatLogger getLogger(Class c){

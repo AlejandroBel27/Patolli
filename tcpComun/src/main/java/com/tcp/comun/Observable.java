@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 /**
  *
- * @author gilbert
+ * @author  Equipo 1
  */
 public abstract class Observable {
     protected List<IObserver> observers = new ArrayList<>();

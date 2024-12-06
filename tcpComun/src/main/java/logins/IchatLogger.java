@@ -6,7 +6,7 @@ package logins;
 
 /**
  *
- * @author gilbert
+ * @author  Equipo 1
  */
 public interface IchatLogger {
     void log(String mensaje);
