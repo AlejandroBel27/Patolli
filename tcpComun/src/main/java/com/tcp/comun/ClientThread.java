@@ -14,7 +14,7 @@ import java.io.IOException;
 
 /**
  *
- * @author gilbert
+ * @author Equipo 
  */
 public class ClientThread extends Observable implements Runnable,Serializable{
 
